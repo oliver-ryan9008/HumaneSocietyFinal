@@ -8,5 +8,6 @@ namespace HumaneSociety
 {
     class testclass2
     {
+        public int age = 32;
     }
 }
