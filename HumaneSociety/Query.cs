@@ -43,11 +43,39 @@ namespace HumaneSociety
 
         }
 
-        public static void updateClient(Client client)
+        public static void UpdateClient(Client client)
         {
 
         }
 
+        public static void UpdateUsername(Client client)
+        {
+
+        }
+
+        public static void UpdateEmail(Client client)
+        {
+
+        }
+
+        public static void UpdateAddress(Client client)
+        {
+
+        }
+        public static void UpdateFirstName(Client client)
+        {
+
+        }
+
+        public static void UpdateLastName(Client client)
+        {
+
+        }
+
+        //public static void UpdateFirstName(Client client)
+        //{
+
+        //} 
 
 
         //NULL OPERATORS
