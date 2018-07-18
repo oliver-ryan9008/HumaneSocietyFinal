@@ -78,5 +78,16 @@ namespace HumaneSociety.Properties {
                 return ((string)(this["HumaneSocietyConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-LJK90QS;Initial Catalog=HumaneSociety;Integrated Security=Tru" +
+            "e;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string HumaneSocietyConnectionString4 {
+            get {
+                return ((string)(this["HumaneSocietyConnectionString4"]));
+            }
+        }
     }
 }
