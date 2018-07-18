@@ -67,5 +67,16 @@ namespace HumaneSociety.Properties {
                 return ((string)(this["HumaneSocietyConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-95TDKQ6\\MYMSSQLSERVER;Initial Catalog=HumaneSociety;Integrate" +
+            "d Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string HumaneSocietyConnectionString3 {
+            get {
+                return ((string)(this["HumaneSocietyConnectionString3"]));
+            }
+        }
     }
 }

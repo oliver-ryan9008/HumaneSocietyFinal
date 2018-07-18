@@ -197,7 +197,6 @@ namespace HumaneSociety
                 UserInterface.DisplayUserOptions("Email not valid please enter a valid email address");
                 return GetEmail();
             }
-
         }
         private static int GetState()
         {
