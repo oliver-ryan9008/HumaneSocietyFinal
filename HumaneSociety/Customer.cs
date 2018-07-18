@@ -82,7 +82,7 @@ namespace HumaneSociety
         private void CheckAdoptionStatus()
         {
             var pendingAdoptions = Query.GetUserAdoptionStatus(client).ToList();
-            if (pendingAdoptions.Count == 0)
+            if (pendingAdoptions.Count() == 0)
             {
                 UserInterface.DisplayUserOptions("No adoptions currently pending");
             }
