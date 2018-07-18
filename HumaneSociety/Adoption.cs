@@ -8,5 +8,6 @@ namespace HumaneSociety
 {
     class Adoption
     {
+
     }
 }
