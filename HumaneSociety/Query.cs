@@ -29,7 +29,7 @@ namespace HumaneSociety
         }
         public static void RetrieveClients()
         {
-
+            
         }
 
         public static void GetStates()
