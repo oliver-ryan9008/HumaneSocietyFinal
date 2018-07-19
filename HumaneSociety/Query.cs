@@ -9,6 +9,7 @@ namespace HumaneSociety
     public static class Query
     {
         public static HumaneSocietyDataContext context = new HumaneSocietyDataContext();
+        private static Adoption adoptions;
 
 
         public static void GetClient(string userName, string password)
@@ -86,6 +87,21 @@ namespace HumaneSociety
         public static void GetUserAdoptionStatus(Client client)
         {
 
+        }
+
+        public static void RunEmployeeQueries(Employee employee, string update)
+        {
+
+        }
+
+        public static bool UpdateAdoption(bool a, Adoption adoption)
+        {
+            return true;
+        }
+
+        public static Adoption GetPendingAdoptions()
+        {
+            return adoptions;
         }
         //public static void UpdateFirstName(Client client)
         //{
