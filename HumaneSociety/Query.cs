@@ -83,6 +83,10 @@ namespace HumaneSociety
             }
         }
 
+        public static void GetUserAdoptionStatus(Client client)
+        {
+
+        }
         //public static void UpdateFirstName(Client client)
         //{
 
