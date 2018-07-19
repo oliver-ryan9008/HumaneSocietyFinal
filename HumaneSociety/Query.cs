@@ -8,6 +8,7 @@ namespace HumaneSociety
 {
     public static class Query
     {
+        public static HumaneSocietyDataContext context = new HumaneSocietyDataContext();
 
 
         public static void GetClient(string userName, string password)
@@ -69,7 +70,17 @@ namespace HumaneSociety
 
         public static void UpdateLastName(Client client)
         {
+            try
+            {
+                Client person = (from p in context.Clients where p.ClientId.Equals(client.ClientId) select p).First();
+                person.FirstName = client.FirstName;
+                context.SubmitChanges();
+            }
+            catch 
+            {
 
+                
+            }
         }
 
         //public static void UpdateFirstName(Client client)
