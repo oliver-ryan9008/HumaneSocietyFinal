@@ -46,9 +46,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Animal.cs" />
-    <Compile Include="Client.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="Employee.cs" />
     <Compile Include="HumaneSociety.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
