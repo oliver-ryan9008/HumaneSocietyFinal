@@ -18,6 +18,10 @@ namespace HumaneSociety
 
 
         }
+        public static void Adopt(Animal animal, Client client)
+        {
+
+        }
 
         public static void GetAnimalByID(int iD)
         {
@@ -25,10 +29,6 @@ namespace HumaneSociety
 
         }
 
-        public static void Adopt(Animal animal, Client client)
-        {
-
-        }
         public static void RetrieveClients()
         {
             
@@ -48,28 +48,54 @@ namespace HumaneSociety
         public static void UpdateClient(Client client)
         {
 
+
         }
 
         public static void UpdateUsername(Client client)
         {
+            try
+            {
+                Client person = (from p in context.Clients where p.ClientId.Equals(client.ClientId) select p).First();
+                person.UserName = client.UserName;
+                context.SubmitChanges();
+            }
+            catch
+            {
 
+
+            }
         }
 
         public static void UpdateEmail(Client client)
         {
+            try
+            {
+                Client person = (from p in context.Clients where p.ClientId.Equals(client.ClientId) select p).First();
+                person.Email = client.Email;
+                context.SubmitChanges();
+            }
+            catch
+            {
 
+
+            }
         }
 
         public static void UpdateAddress(Client client)
         {
+            try
+            {
+                Client person = (from p in context.Clients where p.ClientId.Equals(client.ClientId) select p).First();
+                person.Address = client.Address;
+                context.SubmitChanges();
+            }
+            catch
+            {
 
+
+            }
         }
         public static void UpdateFirstName(Client client)
-        {
-
-        }
-
-        public static void UpdateLastName(Client client)
         {
             try
             {
@@ -77,10 +103,26 @@ namespace HumaneSociety
                 person.FirstName = client.FirstName;
                 context.SubmitChanges();
             }
-            catch 
+            catch
             {
 
-                
+
+            }
+        }
+
+        public static void UpdateLastName(Client client)
+        {
+           
+            try
+            {
+                Client person = (from p in context.Clients where p.ClientId.Equals(client.ClientId) select p).First();
+                person.LastName = client.LastName;
+                context.SubmitChanges();
+            }
+            catch
+            {
+
+
             }
         }
 
