@@ -9,7 +9,6 @@ namespace HumaneSociety
     public static class Query
     {
         public static HumaneSocietyDataContext context = new HumaneSocietyDataContext();
-        private static Adoption adoptions;
 
 
         public static Client GetClient(string userName, string password)
@@ -181,7 +180,6 @@ namespace HumaneSociety
         {
 
         }
-
         public static void AddUsernameAndPassword(Employee employee)
         {
 
@@ -192,6 +190,21 @@ namespace HumaneSociety
             Employee foundUserName = (from u in context.Employees where u.UserName.Equals(userName) select u).First();
 
             return true;
+        }
+
+        public static void EmployeeLogin()
+        {
+
+        }
+
+        public static void RetrieveEmployeeUser(string email, string employee)
+        {
+
+        }
+
+        public static void GetRoom()
+        {
+
         }
         //public static void EmployeeLogin(UserEmployee userName, UserEmployee password)
         //{
