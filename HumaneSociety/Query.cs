@@ -31,7 +31,7 @@ namespace HumaneSociety
 
         public static void RetrieveClients()
         {
-            
+
         }
 
         public static void GetStates()
@@ -112,7 +112,7 @@ namespace HumaneSociety
 
         public static void UpdateLastName(Client client)
         {
-           
+
             try
             {
                 Client person = (from p in context.Clients where p.ClientId.Equals(client.ClientId) select p).First();
@@ -145,6 +145,61 @@ namespace HumaneSociety
         {
             return adoptions;
         }
+
+        public static void GetShots(Animal animal)
+        {
+
+        }
+
+        public static void UpdateShot(string an, Animal animal)
+        {
+
+        }
+
+        public static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
+        {
+
+        }
+
+        public static void RemoveAnimal(Animal animal)
+        {
+
+        }
+
+        public static Species GetSpecies()
+        {
+            return GetSpecies();// need to fix this. just fixing errors
+        }
+        public static DietPlan GetDietPlan()
+        {
+            return GetDietPlan();// need to fix this. just fixing errors
+        }
+
+        public static void AddAnimal(Animal animal)
+        {
+
+        }
+
+        public static void AddUsernameAndPassword(Employee employee)
+        {
+
+        }
+
+        public static bool CheckEmployeeUserNameExist(string userName)
+        {
+            Employee foundUserName = (from u in context.Employees where u.UserName.Equals(userName) select u).First();
+
+            return true;
+        }
+        //public static void EmployeeLogin(UserEmployee userName, UserEmployee password)
+        //{
+
+        //}
+
+        //public static void RetrieveEmployeeUser(UserEmployee email, UserEmployee employeeNumber)
+        //{
+
+        //}
         //public static void UpdateFirstName(Client client)
         //{
 
