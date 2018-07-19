@@ -13,7 +13,7 @@ namespace HumaneSociety
 
         public static Client GetClient(string userName, string password)
         {
-            Client client = (from c in context.Clients where c.UserName.Equals(userName) && c.Password.Equals(password) select c).First();
+            var client = (from c in context.Clients where c.UserName.Equals(userName) && c.Password.Equals(password) select c).First();
             return client;
         }
         public static void Adopt(Animal animal, Client client)
@@ -167,9 +167,9 @@ namespace HumaneSociety
 
         }
 
-        public static Species GetSpecies()
+        public static Species GetSpecies(string species)
         {
-            return GetSpecies();// need to fix this. just fixing errors
+            return GetSpecies(species);// need to fix this. just fixing errors
         }
         public static DietPlan GetDietPlan()
         {
@@ -188,49 +188,29 @@ namespace HumaneSociety
         public static bool CheckEmployeeUserNameExist(string userName)
         {
             Employee foundUserName = (from u in context.Employees where u.UserName.Equals(userName) select u).First();
-
             return true;
         }
-
-        public static void EmployeeLogin()
+        public static Employee EmployeeLogin(string userName, string password)
         {
+            var employee = context.Employees.Where(e => e.UserName == userName && e.Password == password).Single();
+            return employee;
+        }
+
+        public static Employee RetrieveEmployeeUser(string email, int employeeNumber)
+        {
+            var employee = context.Employees.Where(e => e.Email == email && e.EmployeeNumber == employeeNumber).Single();
+            return employee;
 
         }
 
-        public static void RetrieveEmployeeUser(string email, string employee)
-        {
 
-        }
-
-        public static void GetRoom()
-        {
-
-        }
-        //public static void EmployeeLogin(UserEmployee userName, UserEmployee password)
-        //{
-
-        //}
-
-        //public static void RetrieveEmployeeUser(UserEmployee email, UserEmployee employeeNumber)
-        //{
-
-        //}
-        //public static void UpdateFirstName(Client client)
+        //public static void METHOD NAME(Client client)
         //{
 
         //} 
 
 
-        //NULL OPERATORS
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
+
 
 
 
