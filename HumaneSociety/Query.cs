@@ -202,22 +202,15 @@ namespace HumaneSociety
         //{
 
         //}
-        //public static void UpdateFirstName(Client client)
+
+
+        //public static void METHOD NAME(Client client)
         //{
 
         //} 
 
 
-        //NULL OPERATORS
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
+     
 
 
 
