@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Adoption.cs" />
+    <Compile Include="Animal.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
@@ -63,9 +64,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Query.cs" />
-    <Compile Include="testclass2.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="TestClass.cs" />
     <Compile Include="UserEmployee.cs" />
     <Compile Include="UserInterface.cs" />
   </ItemGroup>
