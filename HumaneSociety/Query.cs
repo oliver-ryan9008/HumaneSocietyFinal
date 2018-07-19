@@ -12,36 +12,38 @@ namespace HumaneSociety
         private static Adoption adoptions;
 
 
-        public static void GetClient(string userName, string password)
+        public static Client GetClient(string userName, string password)
         {
-
-
-
+            Client client = (from c in context.Clients where c.UserName.Equals(userName) && c.Password.Equals(password) select c).First();
+            return client;
         }
         public static void Adopt(Animal animal, Client client)
         {
 
         }
 
-        public static void GetAnimalByID(int iD)
+        public static Animal GetAnimalByID(int iD)
         {
-
+            Animal animal = (from a in context.Animals where a.AnimalId.Equals(iD) select a).First();
+            return animal;
 
         }
 
-        public static void RetrieveClients()
+        public static List<Client> RetrieveClients()
         {
-            
+            var clients = context.Clients.ToList();
+            return clients;
         }
 
-        public static void GetStates()
+        public static List<USState> GetStates()
         {
-
-
+            var states = context.USStates.ToList();
+            return states;
         }
 
         public static void AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, int zipCode, int state)
         {
+            Client client = new Client();
 
         }
 
