@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
-    <Compile Include="Animal.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="HumaneSociety.designer.cs">
       <AutoGen>True</AutoGen>
