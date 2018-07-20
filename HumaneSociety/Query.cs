@@ -164,6 +164,12 @@ namespace HumaneSociety
 
         }
 
+        public static void AddAnimal(Animal newAnimal)
+        {
+            context.Animals.InsertOnSubmit(newAnimal);
+            context.SubmitChanges();
+        }
+
         public static void RemoveAnimal(Animal animal)
         {
             var animals = context.Animals.ToList();
