@@ -1117,7 +1117,7 @@ namespace HumaneSociety
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Specy_Animal", Storage="_Specy", ThisKey="SpeciesId", OtherKey="SpeciesId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Species_Animal", Storage="_Specy", ThisKey="SpeciesId", OtherKey="SpeciesId", IsForeignKey=true)]
 		public Species Species
 		{
 			get
@@ -2452,7 +2452,7 @@ namespace HumaneSociety
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Specy_Animal", Storage="_Animals", ThisKey="SpeciesId", OtherKey="SpeciesId")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Species_Animal", Storage="_Animals", ThisKey="SpeciesId", OtherKey="SpeciesId")]
 		public EntitySet<Animal> Animals
 		{
 			get

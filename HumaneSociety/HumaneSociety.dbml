@@ -42,7 +42,7 @@
       <Association Name="Animal_Room" Member="Rooms" ThisKey="AnimalId" OtherKey="AnimalId" Type="Room" />
       <Association Name="DietPlan_Animal" Member="DietPlan" ThisKey="DietPlanId" OtherKey="DietPlanId" Type="DietPlan" IsForeignKey="true" />
       <Association Name="Employee_Animal" Member="Employee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="Employee" IsForeignKey="true" />
-      <Association Name="Specy_Animal" Member="Species" Storage="_Specy" ThisKey="SpeciesId" OtherKey="SpeciesId" Type="Species" IsForeignKey="true" />
+      <Association Name="Species_Animal" Member="Species" Storage="_Specy" ThisKey="SpeciesId" OtherKey="SpeciesId" Type="Species" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.AnimalShots" Member="AnimalShots">
@@ -109,7 +109,7 @@
     <Type Name="Species">
       <Column Name="SpeciesId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Specy_Animal" Member="Animals" ThisKey="SpeciesId" OtherKey="SpeciesId" Type="Animal" />
+      <Association Name="Species_Animal" Member="Animals" ThisKey="SpeciesId" OtherKey="SpeciesId" Type="Animal" />
     </Type>
   </Table>
   <Table Name="dbo.USStates" Member="USStates">
