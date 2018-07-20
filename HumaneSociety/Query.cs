@@ -174,7 +174,9 @@ namespace HumaneSociety
 
         public static void RemoveAnimal(Animal animal)
         {
-            
+            var animals = context.Animals.ToList();
+            context.GetTable<Animal>().DeleteOnSubmit(animal);
+            context.SubmitChanges();
         }
 
         public static Species GetSpecies(string species)
