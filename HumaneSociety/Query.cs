@@ -166,13 +166,9 @@ namespace HumaneSociety
 
         public static void RemoveAnimal(Animal animal)
         {
-<<<<<<< HEAD
-
-=======
             var animals = context.Animals.ToList();
             context.GetTable<Animal>().DeleteOnSubmit(animal);
             context.SubmitChanges();
->>>>>>> 836364b9e99be25abc92aa8cf28952a593404580
         }
 
         public static Species GetSpecies(string species)
@@ -185,10 +181,7 @@ namespace HumaneSociety
             return dietPlan;
         }
 
-        public static void AddAnimal(Animal animal)
-        {
-
-        }
+   
         public static void AddUsernameAndPassword(Employee employee)
         {
 
