@@ -188,11 +188,7 @@ namespace HumaneSociety
             return GetDietPlan();// need to fix this. just fixing errors
         }
 
-        public static void AddAnimal(Animal newAnimal)
-        {
-            context.Animals.InsertOnSubmit(newAnimal);
-            context.SubmitChanges();
-        }
+
         public static void AddUsernameAndPassword(Employee employee)
         {
 
