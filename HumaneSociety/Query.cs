@@ -122,14 +122,17 @@ namespace HumaneSociety
             }
             catch
             {
-
+                
 
             }
         }
 
-        public static void GetUserAdoptionStatus(Client client)
+        public static IQueryable<Adoption> GetUserAdoptionStatus(Client client)
         {
-            //Paxton
+            var adoptions = from s in context.Adoptions
+                            where s.ClientId == client.ClientId
+                            select s;
+            return adoptions;
         }
 
         public static void RunEmployeeQueries(Employee employee, string update)
@@ -152,13 +155,12 @@ namespace HumaneSociety
             }
             
         }
-
-        public static Adoption GetPendingAdoptions()
+        public static IQueryable<Adoption> GetPendingAdoptions()
         {
-            //Paxton
-
+            var adoptions = (from a in context.Adoptions where a.ApprovalStatus.Equals(null) select a);
             return adoptions;
         }
+
 
         public static IQueryable<AnimalShot> GetShots(Animal animal)
         {
@@ -211,7 +213,6 @@ namespace HumaneSociety
                         break;
                 }
             }
-        
         }
 
 
