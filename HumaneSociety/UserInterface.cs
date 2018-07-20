@@ -171,7 +171,7 @@ namespace HumaneSociety
                     searchParameters.Add(1, UserInterface.GetStringData("categories", "the animal's"));
                     return searchParameters;
                 case "2":
-                    searchParameters.Add(2, UserInterface.GetStringData("breed", "the animal's"));
+                    searchParameters.Add(2, UserInterface.GetStringData("species", "the animal's"));
                     return searchParameters;
                 case "3":
                     searchParameters.Add(3, UserInterface.GetStringData("name", "the animal's"));
