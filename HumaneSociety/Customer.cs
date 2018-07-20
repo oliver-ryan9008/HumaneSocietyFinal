@@ -89,7 +89,7 @@ namespace HumaneSociety
             else
             {
                 List<string> Adoptions = new List<string>();
-                foreach(Adoption adoption in pendingAdoptions())
+                foreach(Adoption adoption in pendingAdoptions)
                 {
                     Adoptions.Add(adoption.Animal.Name + " " + adoption.Animal.Species.Name + " " + adoption.ApprovalStatus);
                 }
