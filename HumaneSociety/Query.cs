@@ -175,8 +175,49 @@ namespace HumaneSociety
 
         public static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
         {
+<<<<<<< HEAD
             //Paxton
+=======
+            var updatedAnimal = context.Animals.Where(a => a.AnimalId.Equals(animal.AnimalId)).SingleOrDefault();
+
+            foreach (var update in updates)
+            {
+                switch (update.Key)
+                {
+                    case 1:
+
+                        break;
+                    case 2:
+                        updatedAnimal.Species.Name = update.Value;
+                        break;
+                    case 3:
+                        updatedAnimal.Name = update.Value;
+                        break;
+                    case 4:
+                        updatedAnimal.Age = Convert.ToInt32(update.Value);
+                        break;
+                    case 5:
+                        updatedAnimal.Demeanor = update.Value;
+                        break;
+                    case 6:
+                        updatedAnimal.KidFriendly = Convert.ToBoolean(update.Value);
+                        break;
+                    case 7:
+                        updatedAnimal.PetFriendly = Convert.ToBoolean(update.Value);
+                        break;
+                    case 8:
+                        updatedAnimal.Weight = Convert.ToInt32(update.Value);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        
+
+
+>>>>>>> fc3d43736424e64f7e51d6a4b8fdb8e931414d0f
         }
+
 
         public static void AddAnimal(Animal newAnimal)
         {
@@ -205,8 +246,12 @@ namespace HumaneSociety
 
         }
 
+<<<<<<< HEAD
 
         public static void AddUsernameAndPassword(Employee newEmployee)
+=======
+        public static void AddUsernameAndPassword(Employee employee)
+>>>>>>> fc3d43736424e64f7e51d6a4b8fdb8e931414d0f
         {
             context.Employees.InsertOnSubmit(newEmployee);
             context.SubmitChanges();
