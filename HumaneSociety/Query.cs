@@ -181,7 +181,11 @@ namespace HumaneSociety
             return dietPlan;
         }
 
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> c58dcfdbab5f718ed3f4eac0eb04aed9e23559f6
         public static void AddUsernameAndPassword(Employee employee)
         {
 
