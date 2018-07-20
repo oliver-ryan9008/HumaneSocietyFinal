@@ -40,8 +40,10 @@ namespace HumaneSociety
             return states;
         }
 
-        public static void GetRoom()
+        public static Room GetRoom(Animal animal)
         {
+            Room newRoom = (from r in context.Rooms where r.AnimalId.Equals(animal.AnimalId) select r).SingleOrDefault();
+            return newRoom;
 
         }
 
