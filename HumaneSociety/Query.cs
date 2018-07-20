@@ -127,9 +127,12 @@ namespace HumaneSociety
             }
         }
 
-        public static void GetUserAdoptionStatus(Client client)
+        public static IQueryable<Adoption> GetUserAdoptionStatus(Client client)
         {
-            //Paxton
+            var adoptions = from s in context.Adoptions
+                            where s.ClientId == client.ClientId
+                            select s;
+            return adoptions;
         }
 
         public static void RunEmployeeQueries(Employee employee, string update)
@@ -152,13 +155,12 @@ namespace HumaneSociety
             }
             
         }
-
-        public static Adoption GetPendingAdoptions()
+        public static IQueryable<Adoption> GetPendingAdoptions()
         {
-            //Paxton
-
+            var adoptions = (from a in context.Adoptions where a.ApprovalStatus.Equals(null) select a);
             return adoptions;
         }
+
 
         public static IQueryable<AnimalShot> GetShots(Animal animal)
         {
@@ -175,9 +177,6 @@ namespace HumaneSociety
 
         public static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
         {
-<<<<<<< HEAD
-            //Paxton
-=======
             var updatedAnimal = context.Animals.Where(a => a.AnimalId.Equals(animal.AnimalId)).SingleOrDefault();
 
             foreach (var update in updates)
@@ -212,10 +211,7 @@ namespace HumaneSociety
                         break;
                 }
             }
-        
-
-
->>>>>>> fc3d43736424e64f7e51d6a4b8fdb8e931414d0f
+       
         }
 
 
@@ -246,12 +242,7 @@ namespace HumaneSociety
 
         }
 
-<<<<<<< HEAD
-
         public static void AddUsernameAndPassword(Employee newEmployee)
-=======
-        public static void AddUsernameAndPassword(Employee employee)
->>>>>>> fc3d43736424e64f7e51d6a4b8fdb8e931414d0f
         {
             context.Employees.InsertOnSubmit(newEmployee);
             context.SubmitChanges();
