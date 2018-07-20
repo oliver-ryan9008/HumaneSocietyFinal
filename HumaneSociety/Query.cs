@@ -13,7 +13,7 @@ namespace HumaneSociety
 
         public static Client GetClient(string userName, string password)
         {
-            var client = (from c in context.Clients where c.UserName.Equals(userName) && c.Password.Equals(password) select c).First();
+            var client = (from c in context.Clients where c.UserName.Equals(userName) && c.Password.Equals(password) select c).Single();
             return client;
         }
         public static void Adopt(Animal animal, Client client)
@@ -23,7 +23,7 @@ namespace HumaneSociety
 
         public static Animal GetAnimalByID(int iD)
         {
-            Animal animal = (from a in context.Animals where a.AnimalId.Equals(iD) select a).First();
+            Animal animal = (from a in context.Animals where a.AnimalId.Equals(iD) select a).Single();
             return animal;
 
         }
@@ -149,7 +149,7 @@ namespace HumaneSociety
         {
             if (condition)
             {
-                Adoption newAdoption = (from a in context.Adoptions where a.AdoptionId.Equals(adoption.AdoptionId) select a).First();
+                Adoption newAdoption = (from a in context.Adoptions where a.AdoptionId.Equals(adoption.AdoptionId) select a).Single();
                 newAdoption.AdoptionId = adoption.AdoptionId;
                 context.SubmitChanges();
                 return true;
@@ -255,7 +255,7 @@ namespace HumaneSociety
 
         public static bool CheckEmployeeUserNameExist(string userName)
         {
-            Employee foundUserName = (from u in context.Employees where u.UserName.Equals(userName) select u).First();
+            Employee foundUserName = (from u in context.Employees where u.UserName.Equals(userName) select u).Single();
             return true;
         }
         public static Employee EmployeeLogin(string userName, string password)
