@@ -129,39 +129,53 @@ namespace HumaneSociety
 
         public static void GetUserAdoptionStatus(Client client)
         {
-
+            //Paxton
         }
 
         public static void RunEmployeeQueries(Employee employee, string update)
         {
-
+            //Paxton
         }
 
-        public static bool UpdateAdoption(bool a, Adoption adoption)
+        public static bool UpdateAdoption(bool condition, Adoption adoption)
         {
-            return true;
+            if (condition)
+            {
+                Adoption newAdoption = (from a in context.Adoptions where a.AdoptionId.Equals(adoption.AdoptionId) select a).First();
+                newAdoption.AdoptionId = adoption.AdoptionId;
+                context.SubmitChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         public static Adoption GetPendingAdoptions()
         {
-
+            //Paxton
 
             return adoptions;
         }
 
-        public static void GetShots(Animal animal)
+        public static IQueryable<AnimalShot> GetShots(Animal animal)
         {
-
+            var shots = (from s in context.AnimalShots where s.Equals(animal) select s);
+            return shots;
         }
 
-        public static void UpdateShot(string an, Animal animal)
-        {
-
+        public static void UpdateShot(string shotType, Animal animal)
+        {            
+            Animal shotStatus = (from s in context.Animals where s.AnimalId.Equals(animal.AnimalId) select s).First();
+            shotStatus.AnimalShots = animal.AnimalShots;
+            context.SubmitChanges();
         }
 
         public static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
         {
-
+            //Paxton
         }
 
         public static void AddAnimal(Animal newAnimal)
@@ -179,18 +193,23 @@ namespace HumaneSociety
 
         public static Species GetSpecies(string species)
         {
-            return GetSpecies(species);// need to fix this. just fixing errors
+            //Ryan
+            Species foundSpecies = (from s in context.Species where s.SpeciesId.Equals(species) select s).First();
+            return foundSpecies;
         }
         public static DietPlan GetDietPlan(string species)
         {
-            DietPlan dietPlan = new DietPlan();
+            //Ryan
+            DietPlan dietPlan = (from d in context.DietPlans where d.DietPlanId.Equals(species) select d).First();
             return dietPlan;
+
         }
 
 
-        public static void AddUsernameAndPassword(Employee employee)
+        public static void AddUsernameAndPassword(Employee newEmployee)
         {
-
+            context.Employees.InsertOnSubmit(newEmployee);
+            context.SubmitChanges();
         }
 
         public static bool CheckEmployeeUserNameExist(string userName)
