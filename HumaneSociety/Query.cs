@@ -40,6 +40,11 @@ namespace HumaneSociety
             return states;
         }
 
+        public static void GetRoom()
+        {
+
+        }
+
         public static void AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, int zipCode, int state)
         {
             Client client = new Client();
