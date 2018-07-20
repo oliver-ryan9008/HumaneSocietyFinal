@@ -43,13 +43,23 @@ namespace HumaneSociety
         public static void AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, int zipCode, int state)
         {
             Client client = new Client();
+            Address address = new Address();
+            client.FirstName = firstName;
+            client.LastName = lastName;
+            client.UserName = username;
+            client.Password = password;
+            client.Email = email;
+            streetAddress = address.AddressLine1 + address.AddressLine2; //not sure about this one
+            address.Zipcode = zipCode;
+            address.USStateId = state;
 
         }
 
         public static void UpdateClient(Client client)
         {
-
-
+            Client person = (from p in context.Clients where p.ClientId.Equals(client.ClientId) select p).First();
+            client = person;
+            context.SubmitChanges();
         }
 
         public static void UpdateUsername(Client client)
@@ -154,7 +164,7 @@ namespace HumaneSociety
 
         public static void UpdateShot(string an, Animal animal)
         {
-
+            
         }
 
         public static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
@@ -164,7 +174,7 @@ namespace HumaneSociety
 
         public static void RemoveAnimal(Animal animal)
         {
-
+            
         }
 
         public static Species GetSpecies(string species)
@@ -176,9 +186,10 @@ namespace HumaneSociety
             return GetDietPlan();// need to fix this. just fixing errors
         }
 
-        public static void AddAnimal(Animal animal)
+        public static void AddAnimal(Animal newAnimal)
         {
-
+            context.Animals.InsertOnSubmit(newAnimal);
+            context.SubmitChanges();
         }
         public static void AddUsernameAndPassword(Employee employee)
         {
@@ -203,6 +214,10 @@ namespace HumaneSociety
 
         }
 
+        public static void GetRoom(Animal AnimalId)
+        {
+
+        }
 
         //public static void METHOD NAME(Client client)
         //{
