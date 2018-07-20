@@ -167,17 +167,16 @@ namespace HumaneSociety
         }
 
         public static void UpdateShot(string shotType, Animal animal)
-        {            
-            Animal shotStatus = (from s in context.Animals where s.AnimalId.Equals(animal.AnimalId) select s).First();
-            shotStatus.AnimalShots = animal.AnimalShots;
+        {
+            AnimalShot newAnimalShot = new AnimalShot();
+            newAnimalShot.AnimalId = animal.AnimalId;
+            newAnimalShot.DateReceived = DateTime.Now;
+            context.AnimalShots.InsertOnSubmit(newAnimalShot);
             context.SubmitChanges();
         }
 
         public static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
         {
-<<<<<<< HEAD
-            //Paxton
-=======
             var updatedAnimal = context.Animals.Where(a => a.AnimalId.Equals(animal.AnimalId)).SingleOrDefault();
 
             foreach (var update in updates)
@@ -213,9 +212,6 @@ namespace HumaneSociety
                 }
             }
         
-
-
->>>>>>> fc3d43736424e64f7e51d6a4b8fdb8e931414d0f
         }
 
 
@@ -245,13 +241,7 @@ namespace HumaneSociety
             return dietPlan;
 
         }
-
-<<<<<<< HEAD
-
         public static void AddUsernameAndPassword(Employee newEmployee)
-=======
-        public static void AddUsernameAndPassword(Employee employee)
->>>>>>> fc3d43736424e64f7e51d6a4b8fdb8e931414d0f
         {
             context.Employees.InsertOnSubmit(newEmployee);
             context.SubmitChanges();
