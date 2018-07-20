@@ -161,8 +161,45 @@ namespace HumaneSociety
 
         public static void EnterUpdate(Animal animal, Dictionary<int, string> updates)
         {
+            var updatedAnimal = context.Animals.Where(a => a.AnimalId.Equals(animal.AnimalId)).SingleOrDefault();
+
+            foreach (var update in updates)
+            {
+                switch (update.Key)
+                {
+                    case 1:
+
+                        break;
+                    case 2:
+                        updatedAnimal.Species.Name = update.Value;
+                        break;
+                    case 3:
+                        updatedAnimal.Name = update.Value;
+                        break;
+                    case 4:
+                        updatedAnimal.Age = Convert.ToInt32(update.Value);
+                        break;
+                    case 5:
+                        updatedAnimal.Demeanor = update.Value;
+                        break;
+                    case 6:
+                        updatedAnimal.KidFriendly = Convert.ToBoolean(update.Value);
+                        break;
+                    case 7:
+                        updatedAnimal.PetFriendly = Convert.ToBoolean(update.Value);
+                        break;
+                    case 8:
+                        updatedAnimal.Weight = Convert.ToInt32(update.Value);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        
+
 
         }
+
 
         public static void AddAnimal(Animal newAnimal)
         {
@@ -187,11 +224,6 @@ namespace HumaneSociety
             return dietPlan;
         }
 
-<<<<<<< HEAD
-   
-=======
-
->>>>>>> c58dcfdbab5f718ed3f4eac0eb04aed9e23559f6
         public static void AddUsernameAndPassword(Employee employee)
         {
 
