@@ -715,7 +715,7 @@ namespace HumaneSociety
 		
 		private EntityRef<Employee> _Employee;
 		
-		private EntityRef<Species> _Species;
+		private EntityRef<Species> _Specy;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -754,7 +754,7 @@ namespace HumaneSociety
 			this._Rooms = new EntitySet<Room>(new Action<Room>(this.attach_Rooms), new Action<Room>(this.detach_Rooms));
 			this._DietPlan = default(EntityRef<DietPlan>);
 			this._Employee = default(EntityRef<Employee>);
-			this._Species = default(EntityRef<Species>);
+			this._Specy = default(EntityRef<Species>);
 			OnCreated();
 		}
 		
@@ -809,7 +809,7 @@ namespace HumaneSociety
 			{
 				if ((this._SpeciesId != value))
 				{
-					if (this._Species.HasLoadedOrAssignedValue)
+					if (this._Specy.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1117,26 +1117,26 @@ namespace HumaneSociety
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Species_Animal", Storage="_Species", ThisKey="SpeciesId", OtherKey="SpeciesId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Specy_Animal", Storage="_Specy", ThisKey="SpeciesId", OtherKey="SpeciesId", IsForeignKey=true)]
 		public Species Species
 		{
 			get
 			{
-				return this._Species.Entity;
+				return this._Specy.Entity;
 			}
 			set
 			{
-				Species previousValue = this._Species.Entity;
+				Species previousValue = this._Specy.Entity;
 				if (((previousValue != value) 
-							|| (this._Species.HasLoadedOrAssignedValue == false)))
+							|| (this._Specy.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Species.Entity = null;
+						this._Specy.Entity = null;
 						previousValue.Animals.Remove(this);
 					}
-					this._Species.Entity = value;
+					this._Specy.Entity = value;
 					if ((value != null))
 					{
 						value.Animals.Add(this);
@@ -2452,7 +2452,7 @@ namespace HumaneSociety
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Species_Animal", Storage="_Animals", ThisKey="SpeciesId", OtherKey="SpeciesId")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Specy_Animal", Storage="_Animals", ThisKey="SpeciesId", OtherKey="SpeciesId")]
 		public EntitySet<Animal> Animals
 		{
 			get
